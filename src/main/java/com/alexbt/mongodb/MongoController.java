@@ -19,12 +19,12 @@ public class MongoController {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(path="/repo", method = RequestMethod.GET)
 	public Iterable<Model> findByRepo() throws IOException {
 		return mongoRepository.findAll();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(path="/template", method = RequestMethod.GET)
 	public Iterable<Model> findByTemplate() throws IOException {
 		return mongoTemplate.findAll(Model.class);
 	}
